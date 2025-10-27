@@ -1,0 +1,107 @@
+* {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+
+        /* ----- Header ----- */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            padding: 15px;
+        }
+
+
+        .banner {
+            height: 100px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+
+        /* ----- Menu ----- */
+        nav {
+            background-color: #f3f3f3;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+
+        /* ----- Main layout ----- */
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+
+        .cart-wrapper {
+            display: flex;
+            gap: 20px;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+
+        /* ----- Khu vực danh sách sản phẩm ----- */
+        .cart-items {
+            flex: 2;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+
+
+        /* ----- Khu vực tổng tiền ----- */
+        .cart-summary {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-weight: bold;
+            min-height: 400px;
+        }
+
+
+        /* ----- Footer ----- */
+        footer {
+            background-color: #f3f3f3;
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+            color: #555;
+        }
+
+
+        /* Responsive (điện thoại) */
+        @media (max-width: 768px) {
+            .cart-wrapper {
+                flex-direction: column;
+            }
+            .cart-items, .cart-summary {
+                width: 100%;
+            }
+        }

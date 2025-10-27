@@ -1,0 +1,92 @@
+/* Cài đặt chung */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* Header */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.logo {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main-nav {
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+
+/* Tiêu đề trang */
+.cart-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 40px 0 20px;
+}
+
+/* Bố cục giỏ hàng */
+.cart-layout {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cột trái: danh sách sản phẩm */
+.cart-items {
+    flex: 2;
+    background-color: #fff;
+    border: 1px dashed #aaa;
+    padding: 40px;
+    min-height: 400px;
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+}
+
+/* Cột phải: tổng tiền + thanh toán */
+.cart-summary {
+    flex: 1;
+    background-color: #fff;
+    border: 1px dashed #aaa;
+    padding: 40px;
+    min-height: 400px;
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f3f3f3;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: #555;
+}
+
+/* Responsive (cho điện thoại) */
+@media (max-width: 768px) {
+    .cart-layout {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .cart-items, .cart-summary {
+        width: 100%;
+    }
+}
