@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đăng ký tài khoản — LocknLock</title>
+
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+<section class="card">
+  <div class="brand">
+    <div style="font-weight:700;">LocknLock Account</div>
+    <div style="font-size:13px;color:var(--muted);">Quản lý tài khoản — bảo mật & đơn giản</div>
+  </div>
+
+  <h1>Tạo tài khoản LocknLock</h1>
+
+  <form id="signupForm" novalidate>
+    
+    <div class="row">
+      <div class="field">
+        <label for="firstName">Họ</label>
+        <input id="firstName" name="firstName" type="text" placeholder="Nguyễn" required>
+      </div>
+
+      <div class="field">
+        <label for="lastName">Tên</label>
+        <input id="lastName" name="lastName" type="text" placeholder="Văn A" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="password">Mật khẩu</label>
+        <input id="password" name="password" type="password" placeholder="Ít nhất 8 ký tự" required>
+      </div>
+
+      <div class="field">
+        <label for="password2">Xác nhận mật khẩu</label>
+        <input id="password2" name="password2" type="password" placeholder="Nhập lại mật khẩu" required>
+      </div>
+    </div>
+
+    <div class="field check-row">
+      <input id="terms" type="checkbox" required>
+      <label for="terms">Tôi đồng ý với 
+        <a href="#" style="color:var(--muted);text-decoration:underline;">
+          Điều khoản & Chính sách
+        </a>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+      <button type="button" class="btn btn-ghost" id="cancelBtn">Hủy</button>
+    </div>
+
+    <div id="formMsg"></div>
+
+    <div class="footer-note">
+      Đã có tài khoản?
+      <a href="#" style="color:var(--muted);text-decoration:underline;">Đăng nhập</a>
+    </div>
+
+  </form>
+</section>
+
+<script src="signup.js"></script>
+</body>
+</html>
+
