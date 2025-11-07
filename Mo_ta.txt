@@ -1,0 +1,34 @@
+Các trang và mục đích:
+1. Trang chủ
+Landing page của website có các nội dung:
+- Quảng cáo sản phẩm/công nghệ mới
+- Các sự kiện sắp/đang diễn ra
+- Mục các tin tức mới nhất về hãng
+2. Giới thiệu
+Đưa ra những thông tin về thương hiệu, lịch sử hình thành, giải thưởng, thông tin doanh nghiệp, trách nhiệm xã hội.
+3. Sản phẩm
+Trang cửa hàng chính cho phép khách hàng có thể tìm kiếm sản phẩm theo các danh mục, lọc sản phẩm, xem chi tiết sản phẩm, xem các bộ sưu tập và đặt hàng
+4. Đổi mới
+Giới thiệu về những đổi mới mà doanh nghiệp có
+5. Câu chuyện
+Cung cấp thông tin về tin tức, lounge và sự kiện
+6. Hệ thống cửa hàng
+Cung cấp thông tin về hệ thống cửa hàng của thương hiệu
+7. Nhượng quyền
+Cung cấp thông tin về những cửa hàng nhượng quyền
+8. Đăng ký
+Khách hàng mới có thể đăng ký
+9. Đăng nhập
+Để có thể đặt hàng và quản lý giỏ hàng, khách hàng phải đăng nhập
+10. Giỏ hàng
+Chứa tạm thời các sản phẩm mà khách hàng đã chọn trước khi thanh toán
+11. Tài khoản của tôi
+Cho phép người dùng thực hiện các chức năng như: 
+- Theo dõi đơn hàng
+- Danh sách địa chỉ
+- Đánh giá
+- Danh sách yêu thích
+- Đã xem gần đây
+- Mã giảm giá
+- Hỗ trợ trực tiếp
+- Chỉnh sửa hồ sơ
