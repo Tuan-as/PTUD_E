@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hệ thống cửa hàng</title>
+  <!-- Liên kết đến file CSS -->
+  <link rel="stylesheet" href="Hethongcuahang.css" />
+</head>
+<body>
+  <!-- PHẦN BỐ CỤC CHÍNH -->
+  <div class="store-container">
+    
+    <!-- SIDEBAR TRÁI: Thanh tìm kiếm và bộ lọc -->
+    <div class="store-sidebar">
+      <!-- Ô tìm kiếm -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm cửa hàng bạn đang tìm" />
+        <i>🔍</i>
+      </div>
+
+      <!-- Nhóm nút lọc khu vực -->
+      <div class="filter-group">
+        <button class="filter-btn active" data-region="all">Xem tất cả</button>
+        <button class="filter-btn" data-region="hn">Hà Nội</button>
+        <button class="filter-btn" data-region="hcm">Hồ Chí Minh</button>
+        <button class="filter-btn" data-region="bac">Miền Bắc</button>
+        <button class="filter-btn" data-region="trung">Miền Trung</button>
+        <button class="filter-btn" data-region="nam">Miền Nam</button>
+      </div>
+
+      <!-- Danh sách cửa hàng -->
+      <ul class="store-list" id="storeList"></ul>
+    </div>
+
+    <!-- PHẦN BẢN ĐỒ VÀ THÔNG TIN CHI TIẾT CỬA HÀNG -->
+    <div class="map-section">
+      <!-- Bản đồ Google Map -->
+      <iframe id="mapFrame" src="https://www.google.com/maps?q=Vincom%20Mega%20Mall%20Smart%20City&output=embed"></iframe>
+
+      <!-- Thông tin cửa hàng -->
+      <div class="store-info" id="storeInfo">
+        <h3>Vincom Mega Mall Smart City</h3>
+        <p><strong>Địa chỉ:</strong> L2-04A, Tầng 2, KĐT Vinhomes Smart City, Nam Từ Liêm, Hà Nội</p>
+        <p><strong>Giờ mở cửa:</strong> 10:00 - 21:30</p>
+        <p><strong>Điện thoại:</strong> 024-3202-2208</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liên kết đến file JavaScript -->
+  <script src="Hethongcuahang.js"></script>
+</body>
+</html>
