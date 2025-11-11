@@ -1,0 +1,113 @@
+/* --- CẤU TRÚC CHUNG VÀ DETAIL CONTAINER --- */
+body {
+    /* Định dạng chung */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.detail-container {
+    /* khối chứa nội dung chi tiết */
+    max-width: 900px; 
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* --- TIÊU ĐỀ VÀ METADATA --- */
+.article-title {
+    /* tiêu đề sự kiện */
+    font-size: 2.5em;
+    color: #222;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.detail-meta {
+    /* thông tin meta (trạng thái, thời gian, địa điểm) */
+    color: #777;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+    text-align: left;
+    font-weight: normal;
+}
+
+/* --- MÔ TẢ NGẮN (INTRO DESCRIPTION) --- */
+.article-description-intro {
+    /* mô tả tóm tắt (intro) */
+    font-style: italic; 
+    font-weight: 500;   
+    font-size: 1em; 
+    color: #555;       
+    margin: 20px 0;
+    padding: 15px 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* --- HÌNH ẢNH CHÍNH VÀ NỘI DUNG --- */
+.detail-image-wrapper {
+    /* khối bao bọc ảnh chính */
+    margin: 30px 0;
+    text-align: center;
+}
+.detail-image-wrapper img {
+    /* ảnh chính */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; 
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.full-article-content {
+    /* khối nội dung chi tiết đầy đủ */
+    line-height: 1.6; 
+    color: #000;
+    font-size: 1.1em;
+    text-align: justify; 
+    margin-top: 30px;
+}
+
+.full-article-content p {
+    /* các đoạn văn */
+    margin-bottom: 1.5em;
+}
+
+/* định dạng text in đậm từ thẻ <strong> */
+.full-article-content strong {
+    color: #000; 
+    font-weight: 700; 
+    font-size: 1em; 
+    display: inline;
+}
+
+/* --- NÚT QUAY VỀ --- */
+.back-to-news-section {
+    /* khối chứa nút quay lại */
+    padding-top: 20px;
+    text-align: right; 
+}
+
+.back-button {
+    /* nút Quay lại */
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: all 0.3s;
+    background-color: white; 
+}
+
+.back-button:hover {
+    /* hover nút Quay lại */
+    background-color: #333;
+    color: white;
+}

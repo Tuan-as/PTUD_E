@@ -1,0 +1,204 @@
+/* ================================== */
+/* [FIX] GHI ĐÈ PADDING CHUNG */
+/* ================================== */
+
+/* * Luật này "kéo" container lên 60px để
+ * lấp vào khoảng đệm chung (padding-top: 60px)
+ * mà file style.css đã thêm vào.
+ */
+.store-container {
+    /* [THÊM MỚI] Kéo lên để lấp khoảng trắng */
+    margin-top: -60px;
+}
+
+/* * Đặt chiều cao container = 100% chiều cao 
+ * màn hình TRỪ ĐI chiều cao của header (90px)
+ */
+.store-container, .store-sidebar, .map-section {
+    /* [THÊM MỚI] Tính toán chiều cao full màn hình */
+    height: calc(100vh - 90px);
+}
+
+/* [THÊM MỚI] Đảm bảo sidebar cuộn được nếu nội dung quá dài */
+.store-sidebar {
+    overflow-y: auto;
+}
+
+
+/* ================================== */
+/* CODE CŨ CỦA BẠN BẮT ĐẦU TỪ ĐÂY */
+/* ================================== */
+
+/* TOÀN TRANG */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* BỐ CỤC CHUNG */
+.store-container {
+  /* [SỬA] Bỏ max-width, margin, padding để full-width */
+  /* max-width: 1200px; */
+  /* margin: 40px auto; */
+  /* padding: 0 20px; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  display: flex;
+  gap: 0; /* [SỬA] Bỏ gap */
+}
+
+/* SIDEBAR TRÁI */
+.store-sidebar {
+  width: 35%;
+  /* [THÊM MỚI] Thêm padding cho nội dung bên trong */
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/* ô tìm kiếm */
+.search-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-box input {
+  /* [SỬA] Đổi width 90% thành 100% và dùng box-sizing */
+  width: 100%;
+  box-sizing: border-box; /* Đảm bảo padding không làm vỡ layout */
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-box i {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  cursor: pointer;
+}
+
+/* nhóm nút lọc */
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* nút lọc */
+.filter-btn {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 13px;
+}
+
+.filter-btn.active, 
+.filter-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* danh sách cửa hàng */
+.store-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #eee;
+  /* [THÊM MỚI] Cho phép cuộn nếu danh sách quá dài */
+  overflow-y: auto; 
+  /* [THÊM MỚI] Tính toán chiều cao còn lại của sidebar */
+  height: calc(100% - 150px); /* (100% - chiều cao ô tìm kiếm - chiều cao nút lọc) */
+}
+
+.store-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.store-list li:hover {
+  color: #007bff;
+}
+
+/* MAP + THÔNG TIN CỬA HÀNG */
+.map-section {
+  width: 65%;
+  /* [SỬA] Xóa các thuộc tính này vì đã đặt ở trên */
+  /* background: #fff; */
+  /* border: 1px solid #eee; */
+  /* border-radius: 4px; */
+  /* overflow: hidden; */
+  /* box-shadow: 0 2px 6px rgba(0,0,0,0.05); */
+  
+  /* [THÊM MỚI] Chia layout map và info */
+  display: flex;
+  flex-direction: column;
+}
+
+/* iframe bản đồ */
+iframe {
+  width: 100%;
+  /* [SỬA] Đổi height cố định thành flex-grow để tự co dãn */
+  /* height: 400px; */
+  flex-grow: 1;
+  border: none;
+}
+
+/* khu vực thông tin cửa hàng */
+.store-info {
+  padding: 16px 20px;
+  /* [THÊM MỚI] Đặt chiều cao tự động, không co lại */
+  flex-shrink: 0;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+/* tiêu đề cửa hàng */
+.store-info h3 {
+  margin: 0 0 10px 0;
+  color: #007bff;
+  font-size: 18px;
+}
+
+/* chi tiết thông tin cửa hàng */
+.store-info p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* RESPONSIVE CHO MOBILE */
+@media (max-width: 900px) {
+  /* [SỬA] Bỏ height cố định trên mobile */
+  .store-container, .store-sidebar, .map-section {
+      height: auto;
+  }
+  
+  .store-container {
+    flex-direction: column;
+    margin-top: -60px; /* Vẫn giữ margin-top âm */
+  }
+
+  .store-sidebar, .map-section {
+    width: 100%;
+  }
+
+  .store-list {
+    height: 300px; /* Đặt chiều cao cố định cho list trên mobile */
+  }
+}

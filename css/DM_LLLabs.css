@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+
+
+/* GIỚI THIỆU */
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.intro-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.intro-content {
+  flex: 1 1 45%;
+}
+.intro-content h1 {
+  font-size: 2.5em;
+  color: #111;
+  margin-bottom: 20px;
+}
+.intro-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+
+.intro-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+.intro-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+/* NỘI DUNG CHI TIẾT */
+.content-section {
+  padding: 70px 10%;
+  background-color: #f9f9f9;
+}
+.content-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.content-block.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.content-block.reverse {
+  flex-direction: row-reverse;
+}
+
+
+.content-block img {
+  flex: 1 1 45%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.content-block .text {
+  flex: 1 1 45%;
+}
+.content-block .text h2 {
+  font-size: 2em;
+  color: #111;
+  margin-bottom: 20px;
+}
+.content-block .text p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .content-block {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content-block.reverse {
+    flex-direction: column;
+  }
+}
+
+
+
+

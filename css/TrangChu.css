@@ -1,0 +1,951 @@
+/* --- CẤU TRÚC CHUNG VÀ KHOẢNG CÁCH --- */
+body {
+    /* định dạng font chữ, màu sắc, nền chung */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.main-content {
+    /* khối bọc nội dung chính */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.section-container {
+    /* giới hạn chiều rộng nội dung trong mỗi section */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* KHOẢNG CÁCH CHUNG */
+.section-margin-top {
+    /* lớp tiện ích thêm khoảng cách trên */
+    margin-top: 80px; 
+}
+
+
+/* --- VIDEO HERO (HEADER) --- */
+.video-hero {
+    /* khối chứa video header */
+    width: 100%;
+    height: 111vh; 
+    position: relative;
+    overflow: hidden;
+}
+
+#product-video {
+    /* video tag */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-overlay {
+    /* lớp phủ mờ (nếu cần) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.hero-caption {
+    /* khối chứa nút "Xem thêm" trên video */
+    position: absolute; 
+    left: 90%;        
+    bottom: 50%;      
+    transform: translateX(-50%); 
+    color: white;
+    z-index: 3;
+    text-align: center; 
+}
+
+.detail-button {
+    /* nút "Xem thêm" */
+    color: #111;
+    background-color: transparent;
+    border: 1px solid #111;
+    padding: 12px 35px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.detail-button:hover {
+    /* hover nút "Xem thêm" */
+    background-color: #111;
+    color: #ffffff;
+    border-color: #111;
+}
+
+
+/* --- SLIDER BANNER SẢN PHẨM --- */
+.product-slider-wrapper {
+    /* khối bao bọc slider */
+    position: relative; 
+    width: 100%;
+    margin-top: -80px; 
+    margin-bottom: 0; 
+    overflow: hidden; 
+}
+
+.product-slider {
+    /* thanh slider (chứa các banner) */
+    display: flex; 
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+/* ẩn thanh cuộn của slider sản phẩm */
+.product-slider::-webkit-scrollbar {
+    display: none;
+}
+.product-slider {
+    scrollbar-width: none;
+}
+
+
+.product-banner-item {
+    /* từng banner (slide) */
+    flex-shrink: 0; 
+    width: 100vw; 
+    height: 111vh; 
+    min-height: 600px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start; 
+}
+
+/* NÚT ĐIỀU HƯỚNG SLIDER (< >) */
+.slider-control {
+    /* định dạng chung nút < > */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: #888;
+    font-size: 30px;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    line-height: 1; 
+}
+.slider-control:hover {
+    /* hover nút điều hướng */
+    color: #111;
+    opacity: 1;
+}
+.prev-control {
+    /* vị trí nút lùi */
+    left: 20px;
+}
+.next-control {
+    /* vị trí nút tiến */
+    right: 20px;
+}
+
+/* DẤU CHẤM CHỈ VỊ TRÍ SLIDER */
+.slider-dots {
+    /* khối bọc các dấu chấm */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+}
+.dot {
+    /* định dạng 1 dấu chấm */
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.dot.active {
+    /* định dạng dấu chấm đang active */
+    background-color: #333;
+    transform: scale(1.2);
+}
+
+
+/* --- NỘI DUNG CHUNG TRONG BANNER (H1, H2, P, NÚT) --- */
+.banner-text-content {
+    /* khối chứa nội dung chữ */
+    position: absolute; 
+    padding: 0 5%;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.title-h1 {
+    /* tiêu đề lớn (H1) */
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+}
+
+.title-h2 {
+    /* tiêu đề nhỏ (H2) */
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.description-text {
+    /* đoạn mô tả (p) */
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.banner-button {
+    /* nút "Xem thêm" trong banner */
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s;
+    background-color: white; 
+}
+.banner-button:hover {
+    /* hover nút "Xem thêm" */
+    background-color: #333;
+    color: white;
+}
+
+
+/* --- ĐỊNH VỊ VÀ MÀU SẮC RIÊNG CỦA BANNER SẢN PHẨM --- */
+.item-fresh-protect .banner-text-content,
+.item-kimchi-fridge .banner-text-content,
+.item-metro-king .banner-text-content {
+    /* định vị chung cho 3 banner sản phẩm */
+    top: auto; 
+    bottom: 10%; 
+    left: 10%;  
+    transform: none; 
+    max-width: 600px;
+    padding: 0;
+}
+
+.item-metro-king, .item-fresh-protect, .item-kimchi-fridge {
+    /* màu chữ chung cho 3 banner */
+    color: #111;  
+}
+
+.item-metro-king .banner-button, .item-fresh-protect .banner-button,
+.item-kimchi-fridge .banner-button {
+    /* định dạng nút riêng cho 3 banner (viền đen, nền trong) */
+    border-color: #111;
+    color: #111;
+    background-color: transparent;
+}
+.item-metro-king .banner-button:hover, .item-fresh-protect .banner-button:hover,
+.item-kimchi-fridge .banner-button:hover {
+    /* hover nút của 3 banner */
+    background-color: #111;
+    color: #ffffff;
+    border-color: #111;
+}
+
+
+/* --- BANNER SỰ KIỆN SINH NHẬT (2 CỘT) --- */
+.birthday-banner-split {
+    /* khối banner chia 2 cột */
+    display: flex; 
+    width: 100%;
+    height: 110vh;
+    min-height: 600px; 
+    background-color: #FFEDF3; 
+    margin-bottom: 0; 
+    position: relative;
+}
+
+.birthday-banner-split::after {
+    /* (không dùng) hiệu ứng đổ bóng dưới chân */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; 
+    pointer-events: none; 
+    z-index: 10; 
+}
+
+.birthday-image-column {
+    /* cột ảnh (bên trái) */
+    flex: 1; 
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 5%;  
+    min-height: 650px; 
+}
+
+.birthday-text-column {
+    /* cột chữ (bên phải) */
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 30px;
+    text-align: left; 
+}
+
+.content-birthday {
+    /* định vị khối chữ */
+    position: relative; 
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 500px; 
+    padding: 0; 
+}
+
+/* định dạng màu chữ cho banner sinh nhật */
+.birthday-banner-split .title-h2 {
+    color: #111;  
+    font-size: 1.8em;
+}
+.birthday-banner-split .title-h1 {
+    color: #111;  
+    font-size: 2.8em;
+}
+.birthday-banner-split .description-text {
+    color: #111;
+}
+
+/* định dạng nút cho banner sinh nhật */
+.birthday-banner-split .banner-button {
+    border-color: #111;
+    color: #111;
+    background-color: transparent;
+}
+.birthday-banner-split .banner-button:hover {
+    background-color: #111;
+    color: #ffffff;
+    border-color: #111;
+}
+
+
+/* --- KHỐI GIỚI THIỆU (ABOUT US HOVER MAP) --- */
+.about-us-section-wrapper {
+    /* khối bọc section Giới thiệu */
+    margin-bottom: 0; 
+    padding-top: 0 !important; 
+    padding-bottom: 0 !important;
+}
+
+.about-us-image-map-card {
+    /* khối chính (chứa ảnh nền thay đổi) */
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56.25%; /* Tỷ lệ 16:9 */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background-image: inherit; 
+    transition: transform 5s ease-out;
+    background-size: cover; 
+    background-position: center;
+}
+
+.about-us-overlay {
+    /* lớp phủ mờ (để chữ nổi bật) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+/* MENU MAP (NẰM TRÊN ẢNH) */
+.about-us-menu-container {
+    /* khối chứa menu map */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.about-us-menu-map-list {
+    /* danh sách menu (flexbox) */
+    display: flex; 
+    justify-content: space-around; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1100px; 
+    margin: 0 auto;
+}
+
+.about-us-menu-map-list li {
+    /* từng mục menu */
+    flex: 1;
+    padding: 10px 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 2px solid transparent; 
+}
+
+.about-us-menu-map-list li a {
+    /* link trong menu */
+    text-decoration: none;
+    color: white; 
+    display: block;
+    transition: color 0.3s;
+}
+
+/* hiệu ứng khi hover mục menu */
+.about-us-menu-map-list li:hover {
+    /* hover nền và gạch trên */
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-top: 3px solid white; 
+}
+.about-us-menu-map-list li:hover a {
+    /* hover màu chữ */
+    color: #fff; 
+}
+
+/* định dạng chữ trong menu */
+.map-title {
+    /* tiêu đề (Thương hiệu, Lịch sử...) */
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.map-description {
+    /* mô tả nhỏ */
+    font-size: 0.8em;
+    margin: 0;
+    color: white;
+    line-height: 1.2;
+}
+
+
+/* --- KHỐI "VÌ SAO CHỌN" (4 CỘT) --- */
+.why-choose-section {
+    /* khối section */
+    margin-bottom: 0; 
+}
+.reason-cards-grid {
+    /* bố cục lưới 4 cột */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 350px; 
+    margin-bottom: 0; 
+}
+
+.reason-card {
+    /* từng thẻ lý do */
+    padding: 40px 30px;
+    color: #111; 
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.reason-card:hover {
+  /* hiệu ứng hover thẻ */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.card-title {
+    /* tiêu đề thẻ (Công nghệ, Chất liệu...) */
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.card-description {
+    /* mô tả thẻ */
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* MÀU SẮC RIÊNG CHO 4 THẺ "VÌ SAO" */
+.reason-1 {  
+    background: linear-gradient(135deg, #e0f2f7, #fffde7);
+    color: #333;
+}
+.reason-2 { 
+    background: linear-gradient(135deg, #fffde7, #fce4ec);
+    color: #333;
+}
+.reason-3 {  
+    background: linear-gradient(135deg, #f3e5f5,  #e0f2f7);
+    color: #333;
+}
+.reason-4 { 
+    background: linear-gradient(135deg, #fffde7, #f3e5f5);
+    color: #333;
+}
+
+/* RESPONSIVE CHO KHỐI "VÌ SAO" */
+@media (max-width: 900px) {
+    /* trên tablet chuyển sang 2 cột */
+    .reason-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: auto;
+    }
+}
+@media (max-width: 600px) {
+    /* trên mobile chuyển sang 1 cột */
+    .reason-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* RESPONSIVE CHUNG (MOBILE) */
+@media (max-width: 768px) {
+    .video-hero {
+        height: 60vh;
+    }
+    .hero-caption h2 {
+        font-size: 2em;
+    }
+    .product-banner-item {
+        min-height: 500px;
+    }
+    .item-metro-king {
+        min-height: 600px;
+    }
+    .banner-text-content {
+        left: 5%;
+        padding: 0 15px;
+    }
+    .title-h1 {
+        font-size: 2em;
+    }
+    .grid-3-col {
+        /* CSS cũ (nếu còn dùng) */
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --- SECTION CHUNG (TIN TỨC, LOUNGE, SỰ KIỆN) --- */
+/* (Style dùng chung cho Trang Chủ và Trang Câu Chuyện) */
+
+.section-header {
+    /* khối chứa tiêu đề section (H2) và nút (a) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    /* tiêu đề (Tin Tức, Lounge, Sự Kiện) */
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.view-all-btn {
+    /* nút "Xem thêm" */
+    color: #ffffff;
+    background-color: #111;
+    border: 1px solid #111;
+    padding: 10px 30px;
+    font-size: 0.8em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.view-all-btn:hover {
+    /* hover nút "Xem thêm" */
+    background-color: #ffffff;
+    color: #111;
+    border-color: #ffffff; /* (Có vẻ đây là lỗi, nên là #111) */
+}
+
+/* (CSS CŨ) BỐ CỤC 3 CỘT */
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+/* CẤU TRÚC THẺ (CARD) CHUNG (CHO TIN TỨC, SỰ KIỆN) */
+.grid-item-card {
+    /* định dạng thẻ (card) chung */
+    border: 1px solid #eee;
+    border-radius: 0; 
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item-card:hover {
+    /* hiệu ứng hover cho thẻ */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);  
+}
+
+.image-wrapper {
+    /* khối bọc ảnh (để giữ tỷ lệ) */
+    width: 100%;
+    padding-top: 75%; /* Tỷ lệ 4:3 */
+    position: relative;
+    overflow: hidden;
+}
+
+.item-image {
+    /* ảnh bên trong thẻ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-content {
+    /* khối chứa nội dung text (tiêu đề, mô tả...) */
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TAGS TIN TỨC */
+.article-tag {
+    /* định dạng chung cho tag */
+    font-size: 0.85em; 
+    padding: 4px 10px; 
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #111;
+}
+.tag-product { /* tag "Sản phẩm" */
+    background-color: #E8F9FF; 
+}
+.tag-company { /* tag "Công ty" */
+    background-color: #FEEBF6; 
+}
+
+/* TRẠNG THÁI SỰ KIỆN */
+.event-status {
+    /* định dạng chung cho trạng thái */
+    font-size: 0.85em; 
+    padding: 4px 10px; 
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #111;
+}
+.status-current { /* trạng thái "Đang diễn ra" */ 
+    background-color: #E8F9FF;  
+}
+.status-upcoming { /* trạng thái "Sắp diễn ra" */
+    background-color: #FEEBF6; 
+}
+.status-past { /* trạng thái "Đã diễn ra" */ 
+    background-color: #EEEEEE;  
+}
+
+/* NỘI DUNG TEXT TRONG THẺ */
+.item-title {
+    /* tiêu đề bài viết */
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px; 
+    line-height: 1.4;
+}
+
+.item-description {
+    /* mô tả ngắn bài viết */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1; 
+}
+
+.item-meta {
+    /* ngày tháng (nằm cuối thẻ) */
+    font-size: 0.8em;
+    color: #999;
+    text-align: right;
+    margin-top: auto;
+}
+
+
+/* --- KHỐI SLIDER LOUNGE --- */
+.lounge-slider-wrapper {
+    /* khối bọc ngoài slider lounge */
+    position: relative;
+    max-width: 100%;
+    margin-top: 0; 
+}
+
+.lounge-slider {
+    /* thanh slider cuộn ngang */
+    display: flex;
+    overflow-x: scroll; 
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 30px; 
+    
+    /* định dạng thanh cuộn (scrollbar) */
+    scrollbar-width: auto; 
+}
+.lounge-slider::-webkit-scrollbar {
+    display: block; 
+    height: 2px; 
+}
+.lounge-slider::-webkit-scrollbar-thumb {
+    /* màu thanh trượt */
+    background-color: #333; 
+}
+.lounge-slider::-webkit-scrollbar-track {
+    /* màu nền thanh cuộn */
+    background-color: #f1f1f1;
+}
+
+/* CẤU TRÚC TỪNG BÀI VIẾT (LOUNGE ITEM) */
+.lounge-item {
+    /* từng mục trong slider lounge */
+    flex-shrink: 0;
+    width: 800px; 
+    height: 450px;
+    position: relative;
+    scroll-snap-align: start; 
+    overflow: hidden;
+    text-decoration: none;
+    color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lounge-item img {
+    /* ảnh nền của mục lounge */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.lounge-caption {
+    /* khối chứa nội dung text (nằm đè lên ảnh) */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    z-index: 5;
+}
+.lounge-caption h3 {
+    /* tiêu đề mục lounge */
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+.lounge-caption p {
+    /* mô tả mục lounge */
+    font-size: 0.9em;
+    margin: 0;
+}
+.lounge-meta {
+    /* ngày tháng/tác giả mục lounge */
+    font-size: 0.8em;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+
+/* --- SLIDER CUỘN NGANG (CHO TIN TỨC, SỰ KIỆN) --- */
+/* (Style dùng chung cho Trang Chủ và Trang Câu Chuyện) */
+
+.story-slider-wrapper {
+    /* khối bọc ngoài slider */
+    position: relative;
+    max-width: 100%;
+}
+
+.story-slider {
+    /* thanh slider cuộn ngang */
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 30px; 
+    padding-bottom: 30px; 
+    
+    /* định dạng thanh cuộn (scrollbar) */
+    scrollbar-width: auto; 
+}
+.story-slider::-webkit-scrollbar {
+    display: block; 
+    height: 2px; 
+}
+.story-slider::-webkit-scrollbar-thumb {
+    background-color: #333; 
+}
+.story-slider::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.story-slider .grid-item-card {
+    /* định kích thước cố định cho thẻ trong slider */
+    flex-shrink: 0; 
+    width: 350px; 
+    scroll-snap-align: start; 
+}
+
+/* RESPONSIVE CHO SLIDER TIN TỨC/SỰ KIỆN (MOBILE) */
+@media (max-width: 768px) {
+    .story-slider .grid-item-card {
+        /* thẻ tin tức/sự kiện trên mobile */
+        width: 80vw;
+    }
+}
+
+
+/* --- KHỐI LIÊN HỆ --- */
+.contact-form-section {
+    /* khối section liên hệ (nền xám) */
+    color: #111; 
+    background-color: #f1f1f1;     
+    padding: 0 20px 60px 20px; 
+}
+
+.contact-header {
+    /* tiêu đề chính "LIÊN HỆ VÀ GÓP Ý" */
+    max-width: 1200px; 
+    margin: 0 auto;
+    border-bottom: 0.5px solid #333; 
+    padding-bottom: 5px; 
+    margin-bottom: 20px; 
+}
+
+.contact-form-section h2 {
+    /* định dạng H2 */
+    color: #333; 
+    padding-top: 80px; 
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0; 
+    text-align: left; 
+    width: 100%; 
+}
+
+.contact-grid {
+    /* layout 2 cột (Form và FAQ) */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* CỘT FORM LIÊN HỆ */
+.contact-form-column {
+    /* cột chứa form */
+    line-height: 1.6;
+}
+
+.sub-header-title {
+    /* tiêu đề phụ (Form và FAQ) */
+    font-size: 1.1em;  
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #111;
+}
+
+.contact-form {
+    /* form điền thông tin */
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    /* các ô điền thông tin (input, textarea) */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333; 
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.submit-btn {
+    /* nút "Gửi Liên Hệ" */
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #ffffff;
+    color: #ffffffff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s;
+    width: fit-content; 
+    background-color: #333; 
+}
+
+.submit-btn:hover {
+    /* hover nút "Gửi Liên Hệ" */
+    border: 1px solid #ffffffff;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* RESPONSIVE CHO KHỐI LIÊN HỆ */
+@media (max-width: 900px) {
+    /* trên tablet chuyển sang 1 cột */
+    .contact-grid {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+}

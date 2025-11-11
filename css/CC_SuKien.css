@@ -1,0 +1,183 @@
+/* --- CẤU TRÚC CHUNG VÀ NEWS CONTAINER --- */
+body {
+    /* Định dạng chung */
+    font-family: 'Arial', sans-serif;
+    color: #333;  
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.news-container {
+    /* khối chứa nội dung chính */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.news-title {
+    /* tiêu đề lớn SỰ KIỆN */
+    font-size: 3em;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- THANH LỌC SỰ KIỆN --- */
+.filter-bar {
+    /* khối chứa các nút lọc */
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    /* nút lọc */
+    padding: 10px 20px;
+    border: none;  
+    background-color: transparent;
+    color: #555;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.filter-btn:hover {
+    /* hover nút lọc */
+    color: #333;
+    border-bottom: 2px solid #ccc;
+}
+
+.filter-btn.active {
+    /* nút đang active */
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #333;  
+}
+
+/* --- KHU VỰC HIỂN THỊ SỰ KIỆN --- */
+.articles-grid {
+    /* bố cục lưới 3 cột */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    min-height: 400px; 
+}
+
+/* CẤU TRÚC THẺ SỰ KIỆN */
+.event-card {
+    /* thẻ sự kiện riêng lẻ */
+    border: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    /* hover thẻ */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-image-wrapper {
+    /* khối bao bọc ảnh */
+    width: 100%;
+    padding-top: 75%; 
+    position: relative;
+    overflow: hidden;
+}
+
+.event-image {
+    /* ảnh sự kiện */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    /* khối chứa nội dung chữ */
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* THẺ TRẠNG THÁI SỰ KIỆN */
+.event-status {
+    /* trạng thái (tag) */
+    font-size: 0.85em; 
+    padding: 4px 10px; 
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.status-current { 
+    /* Đang diễn ra */
+    background-color: #FDFFB8;  
+    color: #333;
+}
+.status-upcoming { 
+    /* Sắp diễn ra */
+    background-color: #FEEBF6; 
+    color: #333;
+}
+.status-past { 
+    /* Đã diễn ra */
+    background-color: #EEEEEE;  
+    color: #333;
+}
+
+.event-title {
+    /* tiêu đề sự kiện */
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.event-description {
+    /* mô tả tóm tắt */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.event-meta {
+    /* thông tin thời gian, địa điểm */
+    font-size: 0.8em;
+    color: #999;
+    margin-top: auto;
+}
+
+/* --- THANH PHÂN TRANG --- */
+.pagination-bar {
+    /* khối phân trang */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+/* style cho page-btn cần được thêm vào (dùng chung với CC_TinTuc.css nếu có) */
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .articles-grid {
+        /* chuyển sang 1 cột trên mobile */
+        grid-template-columns: 1fr; 
+    }
+}

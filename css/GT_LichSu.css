@@ -1,0 +1,177 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, sans-serif;
+ }
+  /* ==== PAGE HEADER ==== */
+ .page-header {
+   background: url("https://www.locknlock.com/eng/image/common/about/history/scene-item-0.png") center/cover no-repeat;
+   text-align: center;
+   color: #fff;
+   padding: 120px 20px;
+   position: relative;
+ }
+  .page-header::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(0, 0, 0, 0.4);
+ }
+  .page-header h1, .page-header p {
+   position: relative;
+   z-index: 1;
+ }
+  .page-header h1 {
+   font-size: 48px;
+   font-weight: bold;
+   margin-bottom: 10px;
+ }
+  .page-header p {
+   font-size: 18px;
+ }
+  /* ==== TIMELINE ==== */
+ .timeline {
+   width: 90%;
+   max-width: 1100px;
+   margin: 80px auto;
+   position: relative;
+ }
+  .timeline-block {
+   flex-wrap: wrap;
+   align-items: center;
+   margin-bottom: 100px;
+ 
+ }
+  .timeline-image {
+    position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;           /* full viewport width */
+  height: 500px;
+  margin-left: -50vw;     /* shift left by half viewport width */
+  margin-right: -50vw;
+  overflow: hidden;
+ }
+  .timeline-image img {
+width: 100%;
+  height: auto; /* giữ đúng tỉ lệ gốc của ảnh */
+  display: block;
+  object-fit: cover; /* giúp ảnh phủ kín mà không méo */
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+ }
+  .timeline-content {
+   flex: 1 1 50%;
+   opacity: 0;
+   transform: translateY(40px);
+   transition: all 0.8s ease;
+   font-size :22px
+ }
+  .timeline-content.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+  .timeline-content.left {
+   text-align: left
+ }
+  .timeline-content.right {
+   text-align: right
+ }
+  .timeline-content h2 {
+   color: #000;
+   font-size: 150px;
+   margin-bottom: 20px;
+ }
+  .timeline-content ul {
+   list-style: none;
+   color: #333;
+   line-height: 1.7;
+   font-size: 22px
+ }
+  /* ==== OVERLAY TEXT ==== */
+ .image-overlay-left {
+   position: relative;
+ }
+  .image-overlay-left img {
+   position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;           /* full viewport width */
+  height: 700px;
+  margin-left: -50vw;     /* shift left by half viewport width */
+  margin-right: -50vw;
+  overflow: hidden;
+  filter: brightness(60%); /* Giảm độ sáng còn 60% */
+ }
+  .overlay-text {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   color: white;
+   opacity:0;
+   transition: all 1s ease;
+   font-size: 22px;
+   text-align: left
+ }
+ .overlay-text ul {
+   list-style: none;
+   color: white;
+   line-height: 1.7;
+   text-align: left;
+   font-size: 22px;
+ }
+  .overlay-text.visible {
+   opacity: 1;
+   transform: translateY(-50%) translateX(0);
+ }
+  .overlay-text h2 {
+   color: white;
+   font-size: 150px;
+   margin-bottom: 20px
+   text-align left;
+ }
+  /* ==== FOOTER ==== */
+ footer {
+   background: #111;
+   color: #fff;
+   text-align: center;
+   padding: 30px 0;
+   font-size: 14px;
+ }
+  .timeline-content.left li strong {
+   display: inline-block;
+   width: 110px; /* căn độ rộng cột "Tháng" */
+ }
+ .overlay-text li {
+   list-style: none;
+   margin-bottom: 6px
+ }
+
+
+ .overlay-text li strong {
+   display: inline-block;
+   width: 110px; /* căn độ rộng cột "Tháng" */
+ }
+  /* Làm 2 ảnh (2009 & 2008) sát lại nhau */
+.timeline-block.tight {
+   margin-bottom: 0 !important;
+ }
+  .timeline-block.tight + .timeline-block.tight {
+   margin-top: -5px; /* Cho nó dính nhẹ nhau, nhìn liền mạch */
+ }
+ .timeline-block video {
+   position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;           /* full viewport width */
+  height: 500px;
+  margin-left: -50vw;     /* shift left by half viewport width */
+  margin-right: -50vw;
+  overflow: hidden;
+ }
+     
+
+
+ 
+
+

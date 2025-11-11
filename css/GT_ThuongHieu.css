@@ -1,0 +1,163 @@
+body {
+   font-family: 'Helvetica Neue', sans-serif;
+   margin: 0;
+   background: #fff;
+   color: #333;
+   overflow-x: hidden;
+ }
+  .page-header {
+   background: url("https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg")
+               center/cover no-repeat; /* Ảnh nền thay cho nền đỏ */
+   color: #fff;
+   text-align: center;
+   padding: 100px 20px 70px;
+   position: relative;
+ }
+ .page-header h1 {
+   font-size: 3em;
+   letter-spacing: 1px;
+   margin-bottom: 10px;
+ }
+ .page-header p {
+   font-size: 1.2em;
+   opacity: 0.9;
+ }
+  /* SECTION CƠ BẢN */
+ .section {
+   padding: 80px 10%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+ }
+ .section h2 {
+   font-size: 2em;
+   color: black;
+   margin-bottom: 20px;
+ }
+ .section p {
+   line-height: 1.6;
+   font-size: 1.05em;
+ }
+  /* INTRO */
+ .intro .text {
+   flex: 1 1 45%;
+   animation: fadeUp 1s ease forwards;
+ }
+ .intro .image {
+   flex: 1 1 45%;
+   text-align: right;
+ }
+ .intro img {
+   width: 100%;
+   border-radius: 10px;
+   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+   transform: scale(0.95);
+   transition: all 0.6s ease;
+ }
+ .intro img:hover {
+   transform: scale(1);
+ }
+  /* VALUE GRID */
+ .values {
+   background-color: #f7f7f7;
+   text-align: center;
+ }
+ .value-grid {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 30px;
+ }
+ .value-card {
+   background: #fff;
+   width: 300px;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+   transition: transform 0.4s ease, box-shadow 0.4s ease;
+   opacity: 0;
+ }
+ .value-card img {
+   width: 100%;
+   border-radius: 10px;
+   margin-bottom: 15px;
+ }
+ .value-card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+ }
+ .value-card.show {
+   animation: fadeUp 0.8s ease forwards;
+ }
+ /* MISSION */
+.mission {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: row-reverse;
+   gap: 40px; /* tạo khoảng cách giữa ảnh và chữ */
+   padding-top: 60px;
+   padding-bottom: 60px;
+ }
+  .mission-content {
+   flex: 1 1 45%;
+ }
+  .mission-content h2 {
+   margin-bottom: 20px;
+ }
+  .mission-content p {
+   line-height: 1.6;
+ }
+  .mission-image {
+   flex: 1 1 45%;
+   text-align: center;
+ }
+  .mission-image img {
+   width: 100%;
+   border-radius: 10px;
+   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+   transition: transform 0.4s ease;
+ }
+  .mission-image img:hover {
+   transform: scale(1.03);
+ }
+ 
+ /* ANIMATION */
+ @keyframes fadeUp {
+   from {opacity: 0; transform: translateY(40px);}
+   to {opacity: 1; transform: translateY(0);}
+ }
+  .fade-section {
+   opacity: 0;
+   transform: translateY(60px);
+   transition: all 1s ease-out;
+ }
+ .fade-section.show {
+   opacity: 1;
+   transform: translateY(0);
+ }
+  /* FOOTER */
+ footer {
+   text-align: center;
+   padding: 30px;
+   background: #111;
+   color: #eee;
+   font-size: 0.9em;
+ }
+  /* RESPONSIVE */
+ @media (max-width: 768px) {
+   .section {
+     flex-direction: column;
+     text-align: center;
+   }
+   .intro img, .mission img {
+     margin-top: 30px;
+   }
+   .value-grid {
+     flex-direction: column;
+     align-items: center;
+   }
+ }
+ 
