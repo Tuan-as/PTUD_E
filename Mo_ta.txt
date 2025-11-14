@@ -1,34 +1,69 @@
-Các trang và mục đích:
 1. Trang chủ
-Landing page của website có các nội dung:
-- Quảng cáo sản phẩm/công nghệ mới
-- Các sự kiện sắp/đang diễn ra
-- Mục các tin tức mới nhất về hãng
-2. Giới thiệu
-Đưa ra những thông tin về thương hiệu, lịch sử hình thành, giải thưởng, thông tin doanh nghiệp, trách nhiệm xã hội.
-3. Sản phẩm
-Trang cửa hàng chính cho phép khách hàng có thể tìm kiếm sản phẩm theo các danh mục, lọc sản phẩm, xem chi tiết sản phẩm, xem các bộ sưu tập và đặt hàng
-4. Đổi mới
-Giới thiệu về những đổi mới mà doanh nghiệp có
-5. Câu chuyện
-Cung cấp thông tin về tin tức, lounge và sự kiện
-6. Hệ thống cửa hàng
-Cung cấp thông tin về hệ thống cửa hàng của thương hiệu
-7. Nhượng quyền
-Cung cấp thông tin về những cửa hàng nhượng quyền
-8. Đăng ký
-Khách hàng mới có thể đăng ký
-9. Đăng nhập
-Để có thể đặt hàng và quản lý giỏ hàng, khách hàng phải đăng nhập
-10. Giỏ hàng
-Chứa tạm thời các sản phẩm mà khách hàng đã chọn trước khi thanh toán
-11. Tài khoản của tôi
-Cho phép người dùng thực hiện các chức năng như: 
-- Theo dõi đơn hàng
-- Danh sách địa chỉ
-- Đánh giá
-- Danh sách yêu thích
-- Đã xem gần đây
-- Mã giảm giá
-- Hỗ trợ trực tiếp
-- Chỉnh sửa hồ sơ
+Trang chủ là nơi hiển thị những nội dung tổng quan và nổi bật nhất của website. Các thông tin này bao gồm: 
+- Banner quảng cáo sản phẩm hoặc công nghệ mới. 
+- Thông tin về các sự kiện quan trọng sắp hoặc đang diễn ra.
+- Lý do nên chọn LocknLock. 
+- Các khối nội dung giới thiệu nhanh về mục Giới Thiệu và Câu chuyện. 
+- Form liên hệ cho phép khách hàng gửi phản hồi hoặc yêu cầu hỗ trợ trực tiếp đến doanh nghiệp. 
+2. Giới thiệu  
+Trang Giới thiệu cung cấp cho khách hàng những thông tin chi tiết về doanh nghiệp thông qua 5 trang con: 
+- Thương hiệu
+- Lịch sử hình thành
+- Giải thưởng
+- Thông tin doanh nghiệp 
+- Trách nhiệm xã hội 
+- Mỗi trang con sẽ tập trung trình bày chi tiết về từng khía cạnh cụ thể. 
+3 Sản phẩm
+Trang Sản phẩm cung cấp cái nhìn tổng quan về các dòng sản phẩm của LocknLock, đồng thời giới thiệu một số sản phẩm tiêu biểu trong từng danh mục, bao gồm 6 trang con: 
+- Bình nước
+- Đồ dùng nhà bếp
+- Hộp đựng thực phẩm 
+- Đồ dùng sinh hoạt 
+- Thiết bị điện gia dụng 
+- Bộ sưu tập
+Khi người dùng lựa chọn một danh mục cụ thể, hệ thống sẽ hiển thị toàn bộ sản phẩm thuộc danh mục đó. Mỗi trang danh mục được trang bị chức năng lọc theo giá (mức giá thấp nhất, cao nhất hoặc khoảng giá do khách hàng tùy chọn). Người dùng có thể truy cập vào từng sản phẩm để xem thông tin chi tiết và thực hiện giao dịch mua hàng.
+4. Chi tiết sản phẩm 
+Trang Chi tiết sản phẩm hiển thị đầy đủ thông tin về từng sản phẩm, bao gồm mô tả, hình ảnh, giá bán, chương trình khuyến mãi và các lựa chọn thanh toán. Trang này cũng cho phép người dùng tiến hành mua hàng. 
+5. Đổi mới
+Trang Đổi mới giới thiệu về các hoạt động nghiên cứu, phát triển và thiết kế của LocknLock, bao gồm 2 trang con: 
+- LL labs
+- Design center
+6 Câu chuyện
+Trang Câu chuyện là không gian chia sẻ các nội dung truyền thông và tin tức của thương hiệu, bao gồm 3 trang con:
+- Tin tức
+- Lounge 
+- Sự kiện
+7. Hệ thống cửa hàng
+Trang Hệ thống cửa hàng hiển thị danh sách toàn bộ các cửa hàng LocknLock chính thức trên toàn quốc. Mỗi cửa hàng được trình bày với thông tin chi tiết như địa chỉ, giờ mở cửa và bản đồ vị trí.
+8. Nhượng quyền
+Trang Nhượng quyền giới thiệu về chính sách, quy trình và quyền lợi khi tham gia hệ thống nhượng quyền thương hiệu LocknLock. Trang này còn tích hợp form liên hệ để các đối tác tiềm năng có thể gửi thông tin đăng ký hoặc yêu cầu tư vấn trực tiếp.
+9. Đăng ký
+Trang Đăng ký cho phép người dùng tạo tài khoản mới trên hệ thống. Ngoài phần nhập thông tin cơ bản, trang còn hiển thị các thông báo về ưu đãi độc quyền dành cho thành viên nhằm khuyến khích khách hàng đăng ký và tham gia cộng đồng người dùng LocknLock.
+10. Đăng nhập
+Trang Đăng nhập cung cấp giao diện đăng nhập tài khoản người dùng. 
+11. Giỏ hàng
+Trang Giỏ hàng cho phép người dùng xem lại toàn bộ sản phẩm đã thêm vào giỏ. Tại đây, họ có thể chỉnh sửa số lượng, xóa sản phẩm hoặc tiến hành bước thanh toán.  
+12. Tài khoản của tôi
+Trang Tài khoản của tôi là khu vực quản lý cá nhân dành cho thành viên sau khi đăng nhập. Trang này bao gồm ba nhóm chức năng chính:
+- Quản lý thông tin cá nhân: cho phép chỉnh sửa hồ sơ và danh sách địa chỉ.
+- Quản lý đơn hàng: hiển thị danh sách đơn hàng, theo dõi tình trạng giao hàng, quản lý hóa đơn, trả hàng/hoàn tiền, khiếu nại và mã giảm giá.
+- Quản lý hoạt động: bao gồm danh sách yêu thích, các sản phẩm đã xem gần đây và phần đánh giá đơn hàng.
+Ngoài ra, trang còn tích hợp Trung tâm hỗ trợ và phản hồi, giúp người dùng liên hệ và gửi ý kiến trực tiếp đến bộ phận chăm sóc khách hàng.
+13. Các trang chính sách
+	Các trang Chính sách của website được xây dựng nhằm đảm bảo tính minh bạch, quyền lợi và trách nhiệm giữa thương hiệu và khách hàng. Nội dung bao gồm bốn trang chính: 
+- Chính sách bảo mật
+- Chính sách trả hàng và hoàn tiền
+- Chính sách bảo hành sản phẩm
+- Điều khoản và điều kiện 
+14. Header
+Phần Header là khu vực điều hướng chính của website, bao gồm các thành phần sau: 
+- Logo thương hiệu LocknLock, liên kết trở về trang chủ khi người dùng nhấp vào.
+- Các danh mục trang chính, như Trang chủ, Giới thiệu, Sản phẩm, Câu chuyện, Hệ thống cửa hàng, v.v.  
+- Các nút chức năng người dùng gồm: Đăng nhập, Đăng ký và Giỏ hàng.
+- Nút tìm kiếm, cho phép người dùng tra cứu sản phẩm hoặc nội dung mong muốn; khi nhấp vào, hệ thống sẽ hiển thị danh sách từ khóa được tìm kiếm phổ biến, hỗ trợ thao tác nhanh và thuận tiện hơn.
+15. Footer
+Phần Footer nằm ở cuối trang web, cung cấp các thông tin quan trọng và liên kết hữu ích cho người dùng. Nội dung bao gồm:
+- Thông tin liên hệ của thương hiệu. 
+- Đường dẫn đến trang thông báo với Bộ Công Thương. 
+- Liên kết đến các trang mạng xã hội chính thức của LocknLock. 
+- Đường dẫn đến các trang chính sách. 
