@@ -1,0 +1,200 @@
+/* css/GioHang.css */
+body {
+    background-color: #f5f5f5; /* Nền xám nhạt giống Shopee */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    min-height: 60vh;
+}
+
+/* --- 1. HEADER CỦA GIỎ HÀNG --- */
+.cart-header {
+    display: grid;
+    /* Cấu trúc lưới: Checkbox | Sản phẩm (rộng nhất) | Đơn giá | Số lượng | Thành tiền | Xóa */
+    grid-template-columns: 50px 4fr 1.5fr 1.5fr 1.5fr 50px;
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #555;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
+    border-radius: 2px;
+}
+/* Cột sản phẩm canh trái */
+.cart-header div:nth-child(2) { text-align: left; }
+
+/* --- 2. DANH SÁCH SẢN PHẨM --- */
+.cart-item {
+    display: grid;
+    grid-template-columns: 50px 4fr 1.5fr 1.5fr 1.5fr 50px;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 2px; /* Khoảng cách nhỏ giữa các sp */
+    align-items: center;
+    text-align: center;
+    border: 1px solid #eee; /* Viền mờ */
+    transition: background-color 0.2s;
+}
+
+.cart-item:hover { background-color: #fafafa; }
+
+/* Cột thông tin sản phẩm (Ảnh + Tên) */
+.item-info {
+    display: flex;
+    align-items: flex-start; /* Canh trên để tên không bị tuột nếu dài */
+    gap: 15px;
+    text-align: left;
+}
+
+.item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #e8e8e8;
+    background: #f9f9f9;
+}
+
+.item-name {
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 1.05em;
+    margin-bottom: 5px;
+}
+.item-name:hover { color: #d0021b; }
+
+.item-variant {
+    color: #999;
+    font-size: 0.9em;
+    display: block;
+}
+
+/* Giá tiền */
+.item-price { color: #333; font-weight: 500; }
+.item-total { color: #d0021b; font-weight: 700; }
+
+/* Nút xóa */
+.btn-del {
+    background: none; border: none; cursor: pointer; color: #333; font-size: 1.1em;
+    transition: 0.2s;
+}
+.btn-del:hover { color: #d0021b; }
+
+/* --- 3. BỘ CHỈNH SỐ LƯỢNG (STYLE VUÔNG) --- */
+.qty-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.qty-group {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 32px;
+}
+.qty-btn {
+    width: 32px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+    color: #555;
+    transition: 0.2s;
+}
+.qty-btn:hover { background: #f8f8f8; color: #000; }
+.qty-input {
+    width: 50px;
+    border: none;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    font-size: 1em;
+    outline: none;
+    color: #333;
+}
+
+/* --- 4. THANH THANH TOÁN (STICKY FOOTER) --- */
+.cart-footer {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding: 0 0 0 20px; /* Padding trái, bên phải nút che hết */
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    border-top: 1px solid #ddd;
+    z-index: 100;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1em;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.total-label { font-size: 1em; color: #333; }
+.total-price { 
+    font-size: 1.8em; 
+    color: #d0021b; 
+    font-weight: bold; 
+    margin-right: 10px;
+}
+
+.btn-checkout {
+    background: #d0021b; /* Màu đỏ LocknLock/Shopee */
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-checkout:hover { background: #b50218; }
+
+/* Checkbox Style */
+.custom-checkbox {
+    width: 18px; height: 18px; cursor: pointer; accent-color: #d0021b;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .cart-header { display: none; } /* Ẩn header trên mobile */
+    .cart-item {
+        grid-template-columns: 40px 1fr;
+        grid-template-areas: 
+            "check info"
+            "check price"
+            "check qty"
+            "check total";
+        gap: 10px;
+        text-align: left;
+    }
+    .cart-item > div { grid-column: auto; }
+    .item-info { grid-area: info; }
+    .item-price::before { content: "Đơn giá: "; color: #999; font-size: 0.9em; }
+    .item-total::before { content: "Thành tiền: "; color: #999; font-size: 0.9em; font-weight: normal; }
+    .btn-del { position: absolute; top: 10px; right: 10px; }
+    .qty-wrapper { justify-content: flex-start; }
+}

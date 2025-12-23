@@ -1,0 +1,115 @@
+/* TOÀN TRANG */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #ffffff;
+   color: #333;
+ }
+ 
+ .banner-section {
+   position: relative;
+   width: 100%;
+   height: 750px; /* hoặc điều chỉnh tùy ý */
+   overflow: hidden;
+ }
+ 
+ .banner-section image {
+   position: absolute;
+   min-width: 100%;
+   right: 0;
+   bottom: 0;
+   object-fit: cover; /* Giúp video luôn phủ kín màn hình mà không méo */
+   z-index: 0;
+ }
+ 
+ .banner-content {
+   position: absolute;
+   top: 50%;
+   left: 8%;
+   transform: translateY(-50%) translateX(-50px); /* ban đầu lệch nhẹ sang trái */
+   opacity: 0; /* ban đầu ẩn */
+   color: white;
+   z-index: 1;
+   font-size: 40px;
+   font-weight: bold;
+   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+   transition: all 1s ease; /* hiệu ứng mượt */
+ }
+ 
+ /* Khi thêm class "show" bằng JS, nội dung sẽ trượt vào và hiện rõ */
+ .banner-content.show {
+   opacity: 1;
+   transform: translateY(-50%) translateX(0);
+ }
+ 
+ 
+ /* GIỚI THIỆU */
+ .intro-section {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 60px 10%;
+   flex-wrap: wrap;
+   opacity: 0;
+   transform: translateY(40px);
+   transition: all 0.8s ease-out;
+ }
+ 
+ .intro-section.show {
+   opacity: 1;
+   transform: translateY(0);
+ }
+ 
+ .intro-content {
+   flex: 1 1 45%;
+ }
+ 
+ .intro-content h1 {
+   font-size: 2.5em;
+   margin-bottom: 20px;
+   color: #222;
+ }
+ 
+ .intro-content p {
+   font-size: 1.1em;
+   line-height: 1.6;
+ }
+ 
+ .intro-image {
+   flex: 1 1 45%;
+   text-align: center;
+ }
+ 
+ .intro-image img {
+   width: 100%;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+ }
+ 
+ .banner-section video {
+   display: block;
+ width: 90%; /* hoặc 80% nếu muốn hẹp hơn */
+ max-width: 1200px; /* để không quá to */
+ margin: 40px auto; /* căn giữa và thêm khoảng cách trên dưới */
+ border-radius: 10px; /* bo góc nhẹ cho đẹp */
+ object-fit: cover; /* giữ tỉ lệ hình */
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* thêm bóng nhẹ */
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

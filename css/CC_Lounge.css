@@ -1,0 +1,173 @@
+/* CẤU TRÚC CHUNG VÀ NEWS CONTAINER */
+body {
+    /* định dạng cơ bản trang */
+    font-family: 'Arial', sans-serif;
+    color: #333;  
+    background-color: #ffffff; 
+    margin: 0;
+    padding: 0;
+}
+
+.news-container { 
+    /* khối chứa nội dung chính trang lounge */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.news-title {
+    /* tiêu đề trang lounge */
+    font-size: 3em;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* THANH LỌC BÀI VIẾT (FILTER BAR) */
+.filter-bar {
+    /* thanh chứa các nút lọc danh mục */
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    /* nút bấm lọc danh mục */
+    padding: 10px 20px;
+    border: none;  
+    background-color: transparent;
+    color: #555;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.filter-btn:hover {
+    /* hiệu ứng hover nút lọc */
+    color: #333;
+    border-bottom: 2px solid #ccc;
+}
+
+.filter-btn.active {
+    /* trạng thái nút đang được chọn */
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #333;  
+}
+
+/* KHỐI BÀI VIẾT LOUNGE (ARTICLE GRID) */
+.lounge-articles-grid {
+    /* lưới hiển thị danh sách bài viết */
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.lounge-card {
+    /* thẻ bài viết lounge */
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56.25%; 
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.lounge-image {
+    /* ảnh đại diện bài viết */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.lounge-card:hover .lounge-image {
+    /* hiệu ứng phóng to ảnh khi hover */
+    transform: scale(1.03);
+}
+
+.lounge-overlay {
+    /* lớp phủ đen chứa nội dung chữ */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 40px 30px 20px 30px; 
+}
+
+.lounge-meta {
+    /* thông tin ngày và tác giả */
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.lounge-title {
+    /* tiêu đề bài viết trong thẻ */
+    font-size: 2.2em; 
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.lounge-description {
+    /* mô tả ngắn gọn bài viết */
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* THANH PHÂN TRANG (PAGINATION) */
+.pagination-bar {
+    /* khung chứa các nút phân trang */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.page-btn {
+    /* nút chuyển trang */
+    padding: 5px 10px; 
+    border: none;
+    background-color: #fff;
+    color: #666;
+    cursor: pointer;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.page-btn:hover {
+    /* hiệu ứng hover nút trang */
+    color: #333;
+}
+
+.page-btn.active {
+    /* trạng thái trang hiện tại */
+    color: #333;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* MEDIA QUERIES (RESPONSIVE) */
+@media (max-width: 768px) {
+    /* điều chỉnh cho mobile */
+    .news-title {
+        font-size: 2.5em;
+    }
+}

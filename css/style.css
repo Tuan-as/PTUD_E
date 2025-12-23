@@ -1,0 +1,593 @@
+/* ================================================== */
+/* NỘI DUNG TỪ HEADER_STYLE.CSS */
+/* ================================================== */
+
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;  
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* 1. Header và Thanh Điều Hướng Chính */
+.site-header {
+    background-color: #fff;
+    border-bottom: 0.5px solid #000;
+    height: 90px; 
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-bar {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 1.1 Logo */
+.logo-link {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+}
+.site-header .logo-container .logo-link {
+    margin-bottom: 0;
+}
+
+
+/* 1.2 Menu Chính (Main Nav) */
+.main-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.main-nav > .nav-list {
+    display: flex;
+    height: 100%;
+}
+
+.nav-item {
+    height: 100%;
+}
+
+.nav-item > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    font-size: 16px !important;
+    font-weight: 500;
+    color: #000;
+    position: relative;
+}
+
+.nav-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; 
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover > a::after {
+    transform: scaleX(1);
+}
+
+/* 1.3 Các nút điều khiển (Controls) */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+.btn-login:hover {
+    opacity: 0.8;
+}
+.btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-register {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+.btn-register:hover {
+    color: #000;
+}
+
+.icon-btn {
+    color: #000;
+}
+.icon-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 2. Mega Menu (Submenu) */
+.submenu-container {
+    position: absolute;
+    top: 100%; 
+    left: 0;   
+    width: 100%; 
+    
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    opacity: 0;
+    visibility: hidden;
+    
+    transform: translateY(-10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.nav-item:hover > .submenu-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu-content {
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 30px 40px;
+    display: flex;
+    gap: 40px; 
+    flex-wrap: nowrap; 
+    
+    /* Căn giữa mặc định cho menu ngắn */
+    justify-content: center;
+}
+
+/* Căn trái cho menu "Sản phẩm" (dài) */
+.submenu-full .submenu-content {
+    justify-content: flex-start;
+}
+
+.submenu-column {
+    flex: 1; 
+    min-width: 160px; 
+}
+
+/* [SỬA] Đổi logic cột cho menu 1 cấp ("Giới thiệu", "Câu chuyện") */
+.submenu-content a.submenu-title {
+    flex: 0 1 auto; 
+    min-width: 0; 
+    white-space: nowrap; 
+}
+/* [SỬA] Bỏ flex: 1 cho cột của menu 1 cấp */
+.submenu-content > .submenu-column > a.submenu-title {
+   flex: 0 1 auto;
+   min-width: 0;
+}
+/* [SỬA] Ghi đè để cột menu 1 cấp không bị `flex: 1` */
+.submenu-content > .submenu-column {
+    flex: 1; /* Áp dụng cho "Sản phẩm" */
+}
+.submenu-content > .submenu-column:has(a.submenu-title) {
+    flex: 0 1 auto; /* Áp dụng cho "Giới thiệu", "Câu chuyện", "Đổi mới" */
+    min-width: 0;
+}
+
+
+.submenu-title {
+    display: block; 
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+a.submenu-title:hover {
+    text-decoration: underline;
+}
+
+.submenu-links li {
+    margin-bottom: 10px;
+}
+
+.submenu-links a {
+    font-size: 13px;
+    color: #000;
+}
+.submenu-links a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* 3. Lớp Phủ Tìm Kiếm (Search Overlay) */
+.search-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    
+    display: none; /* Ẩn mặc định */
+    flex-wrap: wrap; 
+    align-content: flex-start; 
+}
+
+.site-header.search-active .search-overlay {
+    display: flex;
+}
+.site-header.search-active .nav-bar {
+    display: none; /* Ẩn menu chính đi */
+}
+
+.search-overlay .logo-container {
+    flex-shrink: 0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.search-form {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 60px; 
+    height: 90px;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #555;
+}
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-submit-btn {
+    flex-shrink: 0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px; 
+}
+
+.search-overlay .search-close-btn {
+    flex-shrink: 0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+.search-overlay .search-close-btn svg {
+    border: none;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+}
+
+/* 4. Recommendations (Hashtag) */
+.recommendation-keywords {
+    width: 100%;
+    padding: 10px 40px;
+}
+
+.recommendation-keywords h3 {
+    padding-left: 200px; 
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.recommendation-keywords .keywords-list {
+    padding-left: 200px;
+}
+
+.keywords-list span {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.keywords-list span:hover {
+    background-color: #f5f5ff;
+    border-color: #ccc;
+}
+
+
+/* ================================================== */
+/* NỘI DUNG TỪ FOOTER_STYLE.CSS */
+/* ================================================== */
+
+.locknlock-footer {
+    background-color: #ffffff;
+    color: #000; 
+    padding: 60px 0 30px; 
+    border-top: 0.5px solid #000; 
+}
+
+.footer-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+/* PHẦN TRÊN CÙNG (LOGO + MENU) */
+.footer-top-section {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Cột Thông tin (Trái) */
+.footer-info-col {
+    flex-basis: 50%; 
+    max-width: 500px;
+    margin-right: 40px;
+}
+
+.locknlock-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.company-details p {
+    font-size: 13.5px;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 2;
+}
+
+.company-details p strong {
+    font-weight: normal;
+    color: #555;
+}
+
+/* Mạng xã hội */
+.social-icons-group {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-icon-img-link {
+    display: block; 
+    width: 30px; 
+    height: 30px;
+    border: 0.5px solid #ffffff; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    padding: 2px; 
+}
+
+.social-logo-img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+}
+
+.social-icon-img-link:hover {
+    border-color: #000;
+}
+
+.trade-logo-link {
+    margin-top: 20px; 
+}
+
+.bct-logo {
+    max-width: 250px; 
+    height: auto; 
+    display: block;
+}
+
+
+/* Cột Điều hướng (Phải) */
+.footer-nav-section {
+    flex-basis: 70%; 
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+    position: relative;
+}
+
+.nav-column {
+    flex: 1; 
+    min-width: 120px; 
+}
+
+.nav-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 20px;
+    white-space: nowrap; 
+}
+
+/* Footer .nav-list (sẽ xếp dọc mặc định) */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-bottom: 8px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13.5px;
+    transition: color 0.2s;
+}
+
+.nav-list li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* PHẦN DƯỚI CÙNG (POLICY + COPYRIGHT) */
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 30px;
+    font-size: 13.5px;
+}
+
+.policy-links a {
+    color: #555;
+    text-decoration: none;
+    margin-right: 25px;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.policy-links a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.copyright {
+    color: #555;
+}
+
+/* Responsive (Chỉnh sửa cho phù hợp) */
+@media (max-width: 1024px) {
+    /* Responsive cho header */
+    .nav-bar {
+        padding: 0 20px;
+    }
+    .main-nav {
+        display: none;
+    }
+    .header-controls {
+        gap: 10px;
+    }
+    .btn-login, .btn-register {
+        font-size: 0;
+        padding: 10px;
+    }
+    .btn-login {
+        border-radius: 50%;
+    }
+    .btn-icon {
+        margin: 0;
+    }
+
+
+    /* Responsive cho footer */
+    .footer-container {
+        padding: 0 20px;
+    }
+    .footer-top-section {
+        flex-direction: column;
+    }
+    .footer-info-col {
+        margin-right: 0;
+        margin-bottom: 40px;
+        max-width: none;
+    }
+    .footer-nav-section {
+        flex-wrap: wrap;
+        gap: 30px 10px;
+    }
+    .nav-column {
+        flex-basis: 30%;
+        min-width: 100px; 
+    }
+}
+
+/* Responsive Styles for Header */
+@media (max-width: 1024px) {
+    .nav-bar {
+        padding: 0 20px;
+    }
+    
+    /* Hide desktop menu */
+    .main-nav {
+        display: none !important;
+    }
+
+    /* Show mobile menu button */
+    .mobile-menu-btn {
+        display: block !important;
+    }
+    
+    /* Adjust header controls spacing */
+    .header-controls {
+        gap: 15px;
+    }
+    
+    /* Hide desktop user welcome text and name */
+    .user-welcome-text.hidden-mobile,
+    .user-name-link.hidden-mobile,
+    .btn-logout.hidden-mobile,
+    .desktop-auth-btns {
+        display: none !important;
+    }
+    
+    /* Show mobile user/login icons */
+    .mobile-user-btn,
+    .mobile-login-btn {
+        display: inline-flex !important;
+    }
+    
+    /* Adjust button styles for mobile */
+    .btn-login, .btn-register {
+        /* If you want to keep text buttons on mobile, remove display:none from .desktop-auth-btns above 
+           and adjust styling here. Otherwise, switching to icons is cleaner. */
+    }
+}

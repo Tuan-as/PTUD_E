@@ -1,0 +1,181 @@
+/* FILE: css/ThanhToan.css */
+body { background-color: #f5f5f5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; }
+.checkout-container { max-width: 1200px; margin: 20px auto; padding-bottom: 80px; }
+
+/* KHỐI TRẮNG CHUNG */
+.section-box {
+    background: #fff; box-shadow: 0 1px 1px 0 rgba(0,0,0,.05); border-radius: 2px;
+    margin-bottom: 15px; padding: 25px 30px; position: relative;
+}
+
+/* 1. ĐỊA CHỈ (Shopee Style) */
+.address-border-top {
+    height: 3px; width: 100%;
+    background-image: repeating-linear-gradient(45deg,#d0021b,#d0021b 33px,transparent 0,transparent 41px,#111 0,#111 74px,transparent 0,transparent 82px);
+}
+.addr-header { font-size: 1.2em; color: #d0021b; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.addr-content { display: flex; justify-content: space-between; align-items: center; }
+.addr-info-bold { font-weight: 700; color: #000; margin-right: 15px; }
+.btn-change-addr { color: #4080ee; font-weight: 600; cursor: pointer; border: none; background: none; text-transform: uppercase; font-size: 0.95em; }
+
+/* 2. SẢN PHẨM (Grid Layout) */
+.prod-header {
+    display: grid; grid-template-columns: 6fr 2fr 2fr 2fr;
+    color: #999; font-size: 0.9em; margin-bottom: 20px; text-align: center;
+}
+.prod-header div:first-child { text-align: left; }
+
+.prod-item {
+    display: grid; grid-template-columns: 6fr 2fr 2fr 2fr;
+    align-items: center; margin-bottom: 15px; text-align: center;
+    border-bottom: 1px dashed #eee; padding-bottom: 15px;
+}
+.prod-info { display: flex; align-items: flex-start; text-align: left; gap: 15px; }
+.prod-img { width: 50px; height: 50px; object-fit: cover; border: 1px solid #e5e5e5; }
+.prod-name { font-weight: 500; font-size: 0.95em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.prod-total { font-weight: bold; color: #333; }
+
+/* 3. LAYOUT VẬN CHUYỂN & LỜI NHẮN (New Shopee Style) */
+.msg-ship-container {
+    display: flex; border-bottom: 1px dashed #eee; padding-bottom: 20px; margin-bottom: 20px;
+    background: #fdfdfd; border: 1px solid #f2f2f2;
+}
+.msg-box {
+    width: 40%; padding: 20px; border-right: 1px dashed #ddd;
+    display: flex; align-items: center; gap: 10px;
+}
+.msg-input { flex-grow: 1; border: 1px solid #ddd; padding: 8px; outline: none; font-size: 0.9em; }
+
+.ship-box { width: 60%; padding: 20px; }
+.ship-header-row { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; }
+.ship-option-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; cursor: pointer; }
+.ship-radio { accent-color: #d0021b; transform: scale(1.1); margin-right: 10px; }
+.ship-price { color: #d0021b; font-weight: 500; }
+.ship-date { color: #888; font-size: 0.85em; margin-left: 5px; }
+
+/* 4. VOUCHER & THANH TOÁN */
+.voucher-section { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px dashed #ddd; }
+.btn-select-voucher { color: #0056b3; cursor: pointer; text-transform: uppercase; font-size: 0.9em; font-weight: 600; }
+
+.payment-methods { display: flex; gap: 15px; }
+.pay-btn {
+    border: 1px solid #ddd; padding: 12px 25px; cursor: pointer; background: #fff;
+    min-width: 200px; text-align: center; font-weight: 500; position: relative; transition: 0.2s;
+}
+.pay-btn:hover, .pay-btn.active { border-color: #d0021b; color: #d0021b; }
+.pay-btn.active { border-width: 1px; font-weight: 700; background: #fffcfc; }
+.pay-btn.active::after { content: "✓"; position: absolute; top: 0; right: 0; background: #d0021b; color: #fff; font-size: 0.7em; padding: 1px 5px; }
+
+/* FILE: css/ThanhToan.css */
+
+/* ... (Các phần trên giữ nguyên) ... */
+
+/* --- PHẦN TỔNG KẾT TIỀN (LÀM LẠI CHO ĐẸP) --- */
+.summary-box {
+    background-color: #fffcfc;
+    border-top: 1px dashed #dbe0e4;
+    padding: 25px 30px;
+    margin-top: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: flex-end; /* Căn toàn bộ sang phải */
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.summary-label {
+    color: #777;
+    margin-right: 20px; /* Khoảng cách giữa nhãn và số tiền */
+}
+
+.summary-value {
+    width: 150px; /* Cố định chiều rộng để các số thẳng hàng */
+    text-align: right;
+    color: #333;
+    font-weight: 500;
+}
+
+.summary-value.highlight {
+    color: #d0021b; /* Màu đỏ cho số tiền giảm giá */
+}
+
+/* Dòng Tổng Thanh Toán To */
+.grand-total-row {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.grand-total-label {
+    font-size: 1.1em;
+    color: #333;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.grand-total-value {
+    width: 200px;
+    text-align: right;
+    font-size: 2em; /* To bự */
+    color: #d0021b; /* Màu đỏ chủ đạo */
+    font-weight: 700;
+}
+
+/* Nút đặt hàng */
+.btn-place-order {
+    background: #d0021b;
+    color: white;
+    border: none;
+    min-width: 250px;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    margin-top: 20px;
+    float: right; /* Đẩy nút sang phải */
+    transition: background 0.3s;
+}
+.btn-place-order:hover {
+    background: #b90015;
+}
+.btn-place-order:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* --- STYLE MODAL ĐỊA CHỈ & VOUCHER --- */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1000; display: none; justify-content: center; align-items: center; }
+.modal-box { background: #fff; width: 600px; max-height: 90vh; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: flex; flex-direction: column; }
+.modal-header { padding: 20px; border-bottom: 1px solid #eee; font-size: 1.1em; font-weight: 600; }
+.modal-body { padding: 20px; overflow-y: auto; flex-grow: 1; background: #fff; }
+.modal-footer { padding: 15px 20px; border-top: 1px solid #eee; text-align: right; background: #fdfdfd; }
+
+/* Voucher Ticket */
+.voucher-list { max-height: 400px; overflow-y: auto; background: #f8f8f8; padding: 10px; }
+.voucher-ticket { background: #fff; border: 1px solid #ddd; border-left: 4px solid #ccc; margin-bottom: 10px; display: flex; position: relative; cursor: pointer; }
+.voucher-ticket.valid { border-left-color: #d0021b; }
+.voucher-ticket.valid:hover { background: #fffcfc; border-color: #d0021b; }
+.voucher-ticket.invalid { opacity: 0.6; cursor: not-allowed; background: #eee; }
+.vc-left { width: 30%; background: linear-gradient(90deg, #d0021b 0%, #ff5722 100%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; text-align: center; }
+.vc-right { width: 70%; padding: 15px; display: flex; flex-direction: column; justify-content: center; }
+.vc-code { font-weight: bold; font-size: 1.1em; }
+.vc-radio { position: absolute; right: 15px; top: 40%; accent-color: #d0021b; width: 18px; height: 18px; }
+
+/* Address Form */
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+.form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+.form-input { width: 100%; padding: 10px; border: 1px solid #ccc; outline: none; border-radius: 2px; }
+.addr-item { display: flex; gap: 15px; border-bottom: 1px solid #f5f5f5; padding: 15px 0; }
+.addr-radio { margin-top: 4px; accent-color: #d0021b; width: 18px; height: 18px; }
+.btn-back { background: #fff; border: 1px solid #ddd; padding: 8px 25px; cursor: pointer; margin-right: 10px; color: #555; }
+.btn-confirm { background: #d0021b; color: #fff; border: none; padding: 8px 30px; cursor: pointer; }

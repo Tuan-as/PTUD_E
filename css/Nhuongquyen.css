@@ -1,0 +1,302 @@
+/* CÀI ĐẶT CHUNG */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   /* Bỏ background-color body để tránh đè header nếu header trong suốt */
+}
+
+/* KHỐI HERO SECTION */
+.hero-section {
+   width: 100%;
+   height: 600px;
+   background: url('../img_vid/NQ_background.jpg') no-repeat center center; 
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background-color: #333; 
+}
+
+/* lớp phủ màu tối */
+.hero-overlay {
+   position: absolute;
+   top: 0; left: 0;
+   width: 100%; height: 100%;
+   background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* nội dung chính hero */
+.hero-content {
+   color: white; text-align: center;
+   max-width: 650px; padding: 20px;
+   z-index: 10;
+}
+
+/* tiêu đề hero */
+.hero-content h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 15px; }
+.hero-content p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: #f0f0f0; }
+
+/* các nút bấm - Đổi tên class btn để không trùng Header */
+.hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.btn-hero { display: inline-block; padding: 12px 28px; text-decoration: none; font-weight: bold; font-size: 1rem; cursor: pointer; border: none; transition: all 0.2s ease-in-out; }
+.btn-primary { color: #fff; font-weight: bold; }
+.btn-primary:hover {  color: #fff; font-weight: bold; font-style: oblique;}
+.btn-secondary {color: #fff; font-weight: bold; }
+.btn-secondary:hover { color: #fff; font-weight: bold; font-style:oblique; }
+
+
+/* KHỐI SLIDER */
+.slider-wrapper {
+   max-width: 1200px;
+   margin: 0 auto;
+   position: relative;
+   padding: 40px 40px 60px 40px;
+}
+
+.slider-content { display: flex; overflow-x: scroll; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.slider-content::-webkit-scrollbar { display: none; }
+
+.store-card { flex: 0 0 auto; width: 25%; max-width: 300px; padding: 0 10px; scroll-snap-align: start; margin-right: 15px; }
+.card-inner { background-color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; text-align: center; display: flex; flex-direction: column; height: 100%; }
+.card-image img { width: 100%; height: 220px; object-fit: cover; }
+.card-info { padding: 15px 10px 20px 10px; font-size: 1rem; color: #333; font-weight: 600; flex-grow: 1; }
+
+.slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background-color: #fff; border: 1px solid #ddd; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: background-color 0.2s; z-index: 10; }
+.slider-arrow:hover { background-color: #f0f0f0; }
+#prevArrow { left: 0; }
+#nextArrow { right: 0; }
+
+@media (max-width: 1024px) { .store-card { width: 33.33%; } }
+@media (max-width: 768px) { .store-card { width: 50%; } .slider-arrow { display: none !important; } }
+@media (max-width: 480px) { .store-card { width: 80%; margin: 0 5px; } }
+
+
+/* KHỐI LÝ DO (REASON SECTION) */
+.reason-section-standalone {
+   padding: 80px 20px;
+   text-align: center;
+   background-color: #fff;
+}
+.reason-section-standalone h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 50px; }
+
+.reasons-grid-standalone { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 20px; }
+.reason-item-standalone { flex-basis: 25%; text-align: left; padding: 10px; }
+.reason-item-standalone img { width: 100%; height: 180px; object-fit: cover; margin-bottom: 15px; }
+
+.reason-item-standalone h4 { font-size: 1.1rem; color: #222; font-weight: 600; margin-bottom: 5px; line-height: 1.3; }
+.reason-item-standalone h4 span { color: #e60023; font-size: 1.4rem; margin-right: 5px; display: block; margin-bottom: 5px; }
+.reason-item-standalone p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+
+@media (max-width: 1100px) { .reasons-grid-standalone { flex-wrap: wrap; justify-content: center; } .reason-item-standalone { flex-basis: 45%; } }
+@media (max-width: 500px) { .reason-item-standalone { flex-basis: 100%; } }
+
+
+/* KHỐI VIDEO SECTION */
+.video-section { padding: 80px 20px; text-align: center; background-color: #f7f7f7; }
+.video-section h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 20px; }
+.video-section p { max-width: 800px; margin: 0 auto 50px auto; font-size: 1rem; color: #666; line-height: 1.6; }
+
+.video-grid { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.video-item { flex: 1 1 30%; min-width: 300px; max-width: 400px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+
+.video-item-placeholder { width: 100%; padding-top: 56.25%; background-color: #000; position: relative; cursor: pointer; }
+.video-item-placeholder img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+
+.play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background-color: rgba(255, 255, 255, 0.9); border-radius: 50px; display: flex; justify-content: center; align-items: center; }
+.play-icon::after { content: ''; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent #e60023; margin-left: 5px; }
+.video-item:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); }
+@media (max-width: 1024px) { .video-item { flex-basis: 45%; } }
+@media (max-width: 768px) { .video-item { flex-basis: 100%; } }
+
+
+/* KHỐI PHÂN LOẠI CỬA HÀNG */
+.franchise-types-section { padding: 80px 20px; text-align: center; background-color: #f7f7f7; }
+.franchise-types-section h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 5px; }
+.franchise-types-section > p { font-size: 1rem; color: #666; margin-bottom: 40px; }
+
+.store-grid { max-width: 1200px; margin: 0 auto; display: flex; gap: 30px; justify-content: center; align-items: stretch; flex-wrap: wrap; }
+.store-type-card { background-color: #fff; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); flex: 1 1 45%; min-width: 300px; text-align: left; }
+.store-type-card h3 { font-size: 1.2rem; font-weight: 600; color: #222; margin-bottom: 10px; border-bottom: 2px solid #e60023; padding-bottom: 10px; }
+.store-type-card h3 span { color: #e60023; font-weight: bold; font-size: 1.5rem; margin-left: 5px; }
+.store-type-card p { font-size: 0.95rem; line-height: 1.6; color: #666; margin-bottom: 20px; }
+
+.image-gallery { display: flex; flex-direction: column; gap: 10px; }
+.image-gallery img { width: 100%; object-fit: cover; }
+.main-img { height: 300px; }
+.sub-img-grid { display: flex; gap: 10px; flex-wrap: wrap; }
+.sub-img-grid img { flex: 1 1 48%; height: 150px; }
+@media (max-width: 768px) { .store-grid { flex-direction: column; gap: 20px; } .store-type-card { flex-basis: 100%; } }
+
+
+/* KHỐI SẢN PHẨM THEO XU HƯỚNG */
+.product-trends-section { padding: 80px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+.product-trends-section h2 { font-size: 2.5rem; font-weight: bold; color: #222; margin-bottom: 20px; }
+.product-trends-section p { max-width: 850px; margin: 0 auto 50px auto; font-size: 1.1rem; color: #444; line-height: 1.6; }
+
+.product-slider-container { display: flex; justify-content: center; align-items: center; gap: 15px; position: relative; }
+.product-item { flex: 1 1 30%; max-width: 350px; height: 350px; overflow: hidden; }
+.product-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.slider-arrow { width: 35px; height: 35px; background-color: rgba(255, 255, 255, 0.7); border: 1px solid #ddd; display: flex; justify-content: center; align-items: center; color: #333; font-size: 1.5rem; cursor: pointer; position: absolute; z-index: 10; transition: background-color 0.2s; }
+.slider-arrow:hover { background-color: rgba(255, 255, 255, 1); box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+#prevProdArrow { left: 0; transform: translateX(-50%); }
+#nextProdArrow { right: 0; transform: translateX(50%); }
+
+.award-logos { margin-top: 50px; display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; }
+.award-logos img { max-height: 50px; width: auto; opacity: 0.8; transition: opacity 0.2s; }
+.award-logos img:hover { opacity: 1; }
+@media (max-width: 1024px) { .product-item { max-width: 30%; } }
+@media (max-width: 768px) { .product-slider-container { flex-wrap: wrap; } .product-item { flex: 1 1 100%; max-width: 100%; margin-bottom: 20px; height: 300px; } .slider-arrow { display: none; } }
+
+
+/* KHỐI HỖ TRỢ TRUYỀN THÔNG */
+.media-support-section { padding: 80px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+.media-support-section h2 { font-size: 2.5rem; font-weight: bold; color: #222; margin-bottom: 20px; }
+.media-support-section p { max-width: 850px; margin: 0 auto 50px auto; font-size: 1.1rem; color: #666; line-height: 1.6; }
+
+.media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.media-item { position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); background-color: #fff; line-height: 0; }
+.media-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.media-item:hover img { transform: scale(1.03); }
+@media (max-width: 1024px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .media-grid { grid-template-columns: 1fr; } }
+
+
+/* KHỐI SOCIAL LINKS */
+.social-links-section { padding: 40px 20px 80px 20px; text-align: center; background-color: #fff; }
+.social-links-section h3 { font-size: 1.2rem; font-weight: bold; color: #222; margin-bottom: 30px; }
+
+.social-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.social-btn { display: flex; align-items: center; text-decoration: none; color: #222; padding: 10px 25px; background-color: #f0f0f0; font-weight: 600; font-size: 1rem; transition: background-color 0.3s, box-shadow 0.3s; }
+.social-btn:hover { background-color: #e0e0e0; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+.social-icon { width: 24px; height: 24px; margin-right: 10px; object-fit: contain;}
+@media (max-width: 600px) { .social-buttons { flex-direction: column; gap: 15px; } .social-btn { width: 70%; margin: 0 auto; } }
+
+
+/* KHỐI QUY TRÌNH (PROCESS SECTION) */
+.process-section { padding: 80px 20px; text-align: center; background-color: #f0f8ff; }
+.process-section h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 50px; }
+
+.process-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px 10px; position: relative; }
+.process-step { text-align: center; padding: 10px; position: relative; }
+
+.process-step::after { content: '→'; position: absolute; top: 50px; right: -5px; transform: translateY(-50%); font-size: 2rem; color: #007bff; font-weight: normal; z-index: 5; }
+.process-step:nth-child(5n)::after, .process-step:last-child::after { content: none; }
+
+.step-icon { width: 80px; height: 80px; background-color: #e6f3ff; border: 1px solid #c0e0ff; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px auto; box-shadow: 0 0 0 8px #fff; position: relative; z-index: 10; }
+.step-icon img { width: 45px; height: 45px; filter: invert(40%) sepia(80%) saturate(2000%) hue-rotate(190deg) brightness(90%) contrast(90%); }
+.step-title { font-weight: normal; color: #222; font-size: 1.0rem; margin-bottom: 5px; }
+.step-subtitle { font-size: 1.0rem; color: #222; font-weight: normal; }
+.step-email { color: #007bff; }
+.process-step:nth-child(n+6) { margin-top: 50px; }
+
+@media (max-width: 1024px) {
+   .process-grid { grid-template-columns: repeat(3, 1fr); }
+   .process-step:nth-child(5n)::after { content: '→'; }
+   .process-step:nth-child(3n)::after, .process-step:last-child::after { content: none; }
+   .process-step:nth-child(3n)::after { content: '↓'; top: 100%; right: 50%; transform: translate(50%, 0); line-height: 0; }
+   .process-step:nth-child(n+6) { margin-top: 0; }
+}
+@media (max-width: 600px) {
+   .process-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 10px; }
+   .process-step:nth-child(2n)::after, .process-step:last-child::after { content: none; }
+   .process-step::after { content: '→'; top: 50%; right: -10px; }
+   .process-step:nth-child(2n)::after { content: '↓'; top: 100%; right: 50%; transform: translate(50%, 0); }
+}
+
+
+/* KHỐI HỖ TRỢ (SUPPORT SECTION) */
+.support-section { padding: 80px 20px; text-align: center; background-color: #f0f8ff; }
+.support-section h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 20px; }
+.support-section p.intro { max-width: 850px; margin: 0 auto 50px auto; font-size: 1rem; color: #666; line-height: 1.6; }
+
+.support-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+.support-item { background-color: #fff; padding: 30px; text-align: left; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); display: flex; flex-direction: column; border: 1px solid #e0e0e0; }
+
+.support-title-group { display: flex; align-items: center; margin-bottom: 15px; }
+.support-icon-placeholder { width: 50px; height: 50px; margin-right: 15px; background-color: transparent; }
+.support-icon-placeholder img { width: 100%; height: 100%; object-fit: contain; filter: invert(40%) sepia(80%) saturate(2000%) hue-rotate(190deg) brightness(90%) contrast(90%); }
+.support-item h4 { font-size: 1.2rem; color: #222; font-weight: bold; margin: 0; }
+.support-item p { font-size: 0.95rem; color: #444; line-height: 1.6; margin: 0; }
+@media (max-width: 900px) { .support-grid { grid-template-columns: 1fr; } }
+
+
+/* KHỐI CHI PHÍ (COST SECTION) */
+.cost-section { padding: 80px 20px; text-align: center; background-color: #f7f7f7; }
+.cost-section h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 20px; }
+.cost-section p.intro { max-width: 800px; margin: 0 auto 50px auto; font-size: 1rem; color: #666; line-height: 1.6; }
+
+.cost-table-container { max-width: 1000px; margin: 0 auto; overflow-x: auto; background-color: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+.cost-table { width: 100%; border-collapse: collapse; text-align: left; }
+.cost-table thead tr { background-color: #b0b0b0; }
+.cost-table th { color: white; font-size: 1rem; padding: 15px; font-weight: 600; }
+.cost-table td { padding: 15px; border-bottom: 1px solid #ddd; color: #333; font-size: 0.95rem; line-height: 1.4; }
+.cost-table tbody tr:last-child td { border-bottom: none; }
+.cost-table td:nth-child(2) { white-space: nowrap; font-weight: bold; }
+.cost-table td:nth-child(3) { color: #555; }
+@media (max-width: 600px) { .cost-table th, .cost-table td { padding: 10px; font-size: 0.9rem; } }
+
+
+/* KHỐI FORM LIÊN HỆ (CONTACT SECTION) */
+.contact-section-wrapper { background-color: #f7f7f7; padding: 80px 0; }
+.contact-section { max-width: 1200px; margin: 0 auto; display: flex; gap: 0; flex-wrap: wrap; background-color: #fff; }
+
+.contact-info-block { flex: 1 1 50%; min-width: 300px; padding: 40px; background-color: #fff; box-sizing: border-box; }
+.contact-info-block h2 { font-size: 2.2rem; font-weight: bold; color: #222; margin-bottom: 40px; }
+.hotline-group { margin-bottom: 30px; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px; }
+.hotline-group:last-of-type { border-bottom: none; padding-bottom: 0; }
+.hotline-group h3 { font-size: 1.5rem; font-weight: bold; color: #222; margin-bottom: 10px; }
+.hotline-details { display: flex; gap: 30px; font-size: 1.1rem; color: #222; }
+.hotline-number { font-weight: bold; color: #e60023; }
+.store-image-contact { margin-top: 40px; }
+.store-image-contact img { width: 100%; height: auto; object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+
+.contact-form-block { flex: 1 1 50%; min-width: 300px; padding: 40px; background-color: #f7f7f7; box-sizing: border-box; }
+.form-field-group { margin-bottom: 20px; text-align: left; }
+.form-field-group label { display: block; font-size: 0.95rem; color: #444; margin-bottom: 5px; }
+.form-field-group label .required-star { color: #e60023; margin-right: 3px; }
+
+.form-field-group input[type="text"], .form-field-group input[type="email"], .form-field-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; font-size: 1rem; box-sizing: border-box; transition: border-color 0.2s; }
+.form-field-group input:focus, .form-field-group textarea:focus { border-color: #007bff; outline: none; }
+.form-field-group textarea { resize: vertical; min-height: 100px; }
+.location-fields { display: flex; gap: 10px; }
+.location-fields select { flex: 1; padding: 12px; border: 1px solid #ddd; font-size: 1rem; box-sizing: border-box; }
+.area-checkbox-group { display: flex; gap: 20px; margin-top: 10px; }
+.area-checkbox-group label { display: flex; align-items: center; font-weight: normal; }
+.area-checkbox-group input[type="checkbox"] { margin-right: 5px; width: 18px; height: 18px; }
+
+/* [ĐÃ SỬA LỖI TRÙNG] Đổi tên class nút gửi form */
+.btn-franchise-submit { width: 100%; background-color: #007bff; color: white; padding: 15px; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background-color 0.2s; margin-top: 20px; }
+.btn-franchise-submit:hover { background-color: #0056b3; }
+
+@media (max-width: 768px) {
+   .contact-section { flex-direction: column; }
+   .contact-info-block, .contact-form-block { flex-basis: 100%; padding: 30px 20px; }
+   .contact-info-block { background-color: #fff; }
+   .contact-form-block { background-color: #f7f7f7; }
+   .hotline-group { text-align: center; }
+   .hotline-details { justify-content: center; }
+   .store-image-contact { margin-top: 30px; }
+}
+
+/* [ĐÃ SỬA LỖI HÌNH ẢNH] Chỉ áp dụng cho các khối nội dung, TRỪ header/footer */
+.hero-section img,
+.slider-wrapper img,
+.reason-section-standalone img,
+.video-section img,
+.franchise-types-section img,
+.product-trends-section img,
+.media-support-section img,
+.process-section img,
+.support-section img,
+.contact-section-wrapper img {
+    max-width: 100%;
+    display: block;
+    background-color: #eee;
+    object-fit: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
